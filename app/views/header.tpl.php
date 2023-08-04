@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<?= $baseURL ?>/css/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="<?=$baseURL?>/">Pokédex</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">

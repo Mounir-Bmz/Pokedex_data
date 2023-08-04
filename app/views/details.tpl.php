@@ -1,8 +1,8 @@
-<?php 
-    $dPokemon = $viewData["dPokemon"];
-    if ($dPokemon !== false) {
-        $name = $dPokemon->getName();
-    }
+<?php
+$dPokemon = $viewData["dPokemon"];
+if ($dPokemon !== false) {
+    $name = $dPokemon->getName();
+}
 ?>
 
 <?php
@@ -10,32 +10,32 @@ $typeColor01 = $viewData['tPokemon'][0] ?? null;
 $typeColor02 = $viewData['tPokemon'][1] ?? null;
 ?>
 
-<?php if ($typeColor01 !== null && $typeColor02 === null): ?>
-    <?php 
-        $typeColor01 = $typeColor01->getTypeColor();
-        $typeColor02 = null;
+<?php if ($typeColor01 !== null && $typeColor02 === null) : ?>
+    <?php
+    $typeColor01 = $typeColor01->getTypeColor();
+    $typeColor02 = null;
 
-        $tPokemon = $viewData["tPokemon"][0]->getTypeName();
-        $tPokemonBis = null;
+    $tPokemon = $viewData["tPokemon"][0]->getTypeName();
+    $tPokemonBis = null;
     ?>
 
-<?php elseif ($typeColor01 !== null && $typeColor02 !== null): ?>
-    <?php 
-        $typeColor01 = $typeColor01->getTypeColor(); 
-        $typeColor02 = $typeColor02->getTypeColor();
+<?php elseif ($typeColor01 !== null && $typeColor02 !== null) : ?>
+    <?php
+    $typeColor01 = $typeColor01->getTypeColor();
+    $typeColor02 = $typeColor02->getTypeColor();
 
-        $tPokemon = $viewData["tPokemon"][0]->getTypeName();
-        $tPokemonBis = $viewData["tPokemon"][1]->getTypeName();
+    $tPokemon = $viewData["tPokemon"][0]->getTypeName();
+    $tPokemonBis = $viewData["tPokemon"][1]->getTypeName();
     ?>
 
-<?php else: ?>
+<?php else : ?>
     <h2>OOF</h2>
 <?php endif; ?>
 
-<?php if (isset($dPokemon) && is_object($dPokemon)): ?>
+<?php if (isset($dPokemon) && is_object($dPokemon)) : ?>
     <div class="pokemon-details-box">
         <h2 class="text-center">Détails de <?= $dPokemon->getName() ?></h2>
-        <div class="row">
+        <div class="row row-details">
             <div class="col-md-4">
                 <div class="pokemon-image d-flex align-items-center justify-content-center">
                     <img class="img-fluid" src="<?= $baseURL ?>/img/<?= $dPokemon->getNumber() ?>.png" alt="<?= $dPokemon->getName() ?>">
@@ -61,46 +61,45 @@ $typeColor02 = $viewData['tPokemon'][1] ?? null;
                         <div class="pokemon-info-item">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <h5>PV</h5>
-                                    <h5>Attaque</h5>
-                                    <h5>Défense</h5>
-                                    <h5>Attaque Spé.</h5>
-                                    <h5>Défense Spé.</h5>
-                                    <h5>Vitesse</h5>
+                                    <div class="attribute">
+                                        <h5>PV</h5>
+                                        <h5>Attaque</h5>
+                                        <h5>Défense</h5>
+                                        <h5>Attaque Spé.</h5>
+                                        <h5>Défense Spé.</h5>
+                                        <h5>Vitesse</h5>
+                                    </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <h5><?= $dPokemon->getHp() ?></h5>
-                                    <h5><?= $dPokemon->getAttack() ?></h5>
-                                    <h5><?= $dPokemon->getDefense() ?></h5>
-                                    <h5><?= $dPokemon->getSpe_attack() ?></h5>
-                                    <h5><?= $dPokemon->getSpe_defense() ?></h5>
-                                    <h5><?= $dPokemon->getSpeed() ?></h5>
+                                    <div class="attribute-values">
+                                        <h5><?= $dPokemon->getHp() ?></h5>
+                                        <h5><?= $dPokemon->getAttack() ?></h5>
+                                        <h5><?= $dPokemon->getDefense() ?></h5>
+                                        <h5><?= $dPokemon->getSpe_attack() ?></h5>
+                                        <h5><?= $dPokemon->getSpe_defense() ?></h5>
+                                        <h5><?= $dPokemon->getSpeed() ?></h5>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <!-- Skill bars -->
-                                    <div class="progress">
-                                        <div class="progress-bar white_BG_bar" role="progressbar" style="width: <?= ($dPokemon->getHp() / 255) * 100 ?>%;"></div>
-                                        <div class="progress-bar black_BG_bar" role="progressbar" style="width: <?= (1 - ($dPokemon->getHp() / 255)) * 100 ?>%;"></div>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar white_BG_bar" role="progressbar" style="width: <?= ($dPokemon->getAttack() / 255) * 100 ?>%;"></div>
-                                        <div class="progress-bar black_BG_bar" role="progressbar" style="width: <?= (1 - ($dPokemon->getAttack() / 255)) * 100 ?>%;"></div>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar white_BG_bar" role="progressbar" style="width: <?= ($dPokemon->getDefense() / 255) * 100 ?>%;"></div>
-                                        <div class="progress-bar black_BG_bar" role="progressbar" style="width: <?= (1 - ($dPokemon->getDefense() / 255)) * 100 ?>%;"></div>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar white_BG_bar" role="progressbar" style="width: <?= ($dPokemon->getSpe_attack() / 255) * 100 ?>%;"></div>
-                                        <div class="progress-bar black_BG_bar" role="progressbar" style="width: <?= (1 - ($dPokemon->getSpe_attack() / 255)) * 100 ?>%;"></div>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar white_BG_bar" role="progressbar" style="width: <?= ($dPokemon->getSpe_defense() / 255) * 100 ?>%;"></div>
-                                        <div class="progress-bar black_BG_bar" role="progressbar" style="width: <?= (1 - ($dPokemon->getSpe_defense() / 255)) * 100 ?>%;"></div>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar white_BG_bar" role="progressbar" style="width: <?= ($dPokemon->getSpeed() / 255) * 100 ?>%;"></div>
-                                        <div class="progress-bar black_BG_bar" role="progressbar" style="width: <?= (1 - ($dPokemon->getSpeed() / 255)) * 100 ?>%;"></div>
+                                    <div class="skill-bars">
+                                        <div class="skill-bar">
+                                            <div class="skill-fill" style="width: <?= ($dPokemon->getHp() / 255) * 100 ?>%;"></div>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-fill" style="width: <?= ($dPokemon->getAttack() / 255) * 100 ?>%;"></div>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-fill" style="width: <?= ($dPokemon->getDefense() / 255) * 100 ?>%;"></div>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-fill" style="width: <?= ($dPokemon->getSpe_attack() / 255) * 100 ?>%;"></div>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-fill" style="width: <?= ($dPokemon->getSpe_defense() / 255) * 100 ?>%;"></div>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-fill" style="width: <?= ($dPokemon->getSpeed() / 255) * 100 ?>%;"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -110,14 +109,14 @@ $typeColor02 = $viewData['tPokemon'][1] ?? null;
             </div>
         </div>
         <div class="text-center retour">
-            <a href="<?=$baseURL?>/">Revenir à la liste</a>
+            <a href="<?= $baseURL ?>/">Revenir à la liste</a>
         </div>
     </div>
-<?php else: ?>
+<?php else : ?>
     <div class="type-container">
         <h4 class="text-center">Le Pokémon n'a pas été trouvé.</h4>
     </div>
     <div class="text-center retour">
-        <a href="<?=$baseURL?>/">Revenir à la liste</a>
+        <a href="<?= $baseURL ?>/">Revenir à la liste</a>
     </div>
 <?php endif; ?>
