@@ -1,14 +1,13 @@
 <?php
 
-// je require les fichiers dont j'ai besoin pour que tout s'affiche correctement
 require_once('../vendor/autoload.php');
 require_once('../app/Controllers/MainController.php');
 
+// Create an object $router using AltoRouter
 $router = new AltoRouter();
-// ca c'est pour notre $baseURL
+// The BASE_URI key is set via the .htaccess file
 $router->setBasePath(dirname($_SERVER['SCRIPT_NAME']));
 
-// ici je défini mes routes avec un paramètre, une target, et un nom aléatoire pour notre route
 $router->map(
     'GET', 
     '/', 
@@ -19,7 +18,6 @@ $router->map(
     'home'
 );
 
-// pareil qu'au dessus 
 $router->map(
     'GET', 
     '/types',
@@ -52,7 +50,7 @@ $router->map(
 
 $match = $router->match();
 
-// dispatch vu en cours
+// dispatch
 if ($match) {
 
     $controllerToUse = $match['target']['controller'];
