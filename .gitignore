@@ -1,4 +1,5 @@
-/app/config.ini
-resultat
-composer-setup.php
-vendor
+Pokedex_data/app/config.ini
+Pokedex_data/resultat
+Pokedex_data/composer-setup.php
+Pokedex_data/vendor
+Pokedex_data/.gitignore
