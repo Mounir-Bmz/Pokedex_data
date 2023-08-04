@@ -1,0 +1,17 @@
+{
+    "name": "student/s05-exo-pokedex-mounir-bmz",
+    "require": {
+        "altorouter/altorouter": "1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Student\\S05ExoPokedexMounirBmz\\": "./app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mounir-Bmz",
+            "email": "mboumaza.mounir@gmail.com"
+        }
+    ]
+}
