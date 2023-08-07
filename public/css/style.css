@@ -83,6 +83,11 @@ h2 {
     background-color: #e0e0e0 !important;
 }
 
+.types-divs{
+    color: #ffffff;
+    text-decoration: none;
+}
+
 /* character-grid POKEMON HOME */
 
 .character-grid {
@@ -273,4 +278,13 @@ thead th {
 
 .type-title{
     margin-right: 0px;
+}
+
+td a{
+    color: #AB3838;
+    text-decoration: none;
+}
+
+td a:hover{
+    color: #4e0000;
 }

@@ -46,16 +46,19 @@ class MainController
         ]);
     }
 
-    public function liste() {
+    public function liste($params) {
+
         $chara = new Pokemon();
-        $charaList = $chara->findAll();
+        $typeFilter = isset($params['type']) ? $params['type'] : null;
+
+        if ($typeFilter) {
+            $charaList = $chara->findAllByType($typeFilter);
+        } else {
+            $charaList = $chara->findAll();
+        }
 
         $this->show('liste',[
             'charaList' => $charaList
         ]);
     }
-
-    // public function err404() {
-    //      $this->show('404');
-    // }
 }

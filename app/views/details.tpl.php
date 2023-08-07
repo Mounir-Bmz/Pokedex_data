@@ -109,7 +109,7 @@ $typeColor02 = $viewData['tPokemon'][1] ?? null;
             </div>
         </div>
         <div class="text-center retour">
-            <a href="<?= $baseURL ?>/">Revenir à l'accueil</a>
+            <a href="<?=$baseURL?>/liste">Revenir à la liste</a>
         </div>
     </div>
 <?php else : ?>
@@ -117,6 +117,6 @@ $typeColor02 = $viewData['tPokemon'][1] ?? null;
         <h4 class="text-center">Le Pokémon n'a pas été trouvé.</h4>
     </div>
     <div class="text-center retour">
-        <a href="<?= $baseURL ?>/">Revenir à la liste</a>
+        <a href="<?= $baseURL ?>/">Revenir à l'accueil</a>
     </div>
 <?php endif; ?>

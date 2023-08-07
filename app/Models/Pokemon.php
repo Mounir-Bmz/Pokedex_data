@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__."/../utils/Database.php";
+require_once __DIR__ . "/../utils/Database.php";
 
 class Pokemon
 {
@@ -36,7 +36,7 @@ class Pokemon
             SELECT * 
             FROM `pokemon`
             WHERE number = ' . $number;
-            
+
         // Database::getPDO() me retourne l'objet PDO représentant la connexion à la BDD
         $pdo = Database::getPDO();
         // j'execute ma requête pour récupérer les 
@@ -66,10 +66,28 @@ class Pokemon
         return $result;
     }
 
+    public function findAllByType($type)
+    {
+        $sql = '
+        SELECT DISTINCT pokemon.*
+        FROM `pokemon`
+        LEFT JOIN `pokemon_type` ON pokemon.number = pokemon_type.pokemon_number
+        LEFT JOIN `type` ON pokemon_type.type_id = type.id
+        WHERE type.name = :type
+    ';
+
+        $pdo = Database::getPDO();
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->bindParam(':type', $type, PDO::PARAM_STR);
+        $pdoStatement->execute();
+        $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Pokemon');
+
+        return $results;
+    }
 
     /**
      * Get the value of name
-     */ 
+     */
     public function getName()
     {
         return $this->name;
@@ -77,7 +95,7 @@ class Pokemon
 
     /**
      * Get the value of hp
-     */ 
+     */
     public function getHp()
     {
         return $this->hp;
@@ -85,7 +103,7 @@ class Pokemon
 
     /**
      * Get the value of attack
-     */ 
+     */
     public function getAttack()
     {
         return $this->attack;
@@ -93,7 +111,7 @@ class Pokemon
 
     /**
      * Get the value of defense
-     */ 
+     */
     public function getDefense()
     {
         return $this->defense;
@@ -101,7 +119,7 @@ class Pokemon
 
     /**
      * Get the value of spe_attack
-     */ 
+     */
     public function getSpe_attack()
     {
         return $this->spe_attack;
@@ -109,7 +127,7 @@ class Pokemon
 
     /**
      * Get the value of spe_defense
-     */ 
+     */
     public function getSpe_defense()
     {
         return $this->spe_defense;
@@ -117,7 +135,7 @@ class Pokemon
 
     /**
      * Get the value of speed
-     */ 
+     */
     public function getSpeed()
     {
         return $this->speed;
@@ -125,7 +143,7 @@ class Pokemon
 
     /**
      * Get the value of number
-     */ 
+     */
     public function getNumber()
     {
         return $this->number;

@@ -32,17 +32,21 @@
             #<?= sprintf('%03d', $number) ?>
           </td>
           <td>
-            <a href="<?= $baseURL ?>/details/<?= $number ?>" class="">
+            <a href="<?= $baseURL ?>/details/<?= $number ?>">
               <img src="<?= $baseURL ?>/img/<?= $number ?>.png" alt="<?= $name ?>"></p>
             </a>
           </td>
           <td>
-            <?= $name ?>
+            <a href="<?= $baseURL ?>/details/<?= $number ?>">
+              <?= $name ?>
+            </a>
           </td>
           <td>
             <?php foreach ($types as $type) : ?>
               <div class="d-flex justify-content-center align-items-center pokemon-info-item">
-                <h5 class="type-block type-title" style="background-color:#<?= $type->getTypeColor() ?>"><?= $type->getTypeName() ?></h5>
+                <a href="<?=$baseURL?>/liste/<?= $type->getTypeName() ?>">
+                  <h5 class="type-block type-title" style="background-color:#<?= $type->getTypeColor() ?>"><?= $type->getTypeName() ?></h5>
+                </a>
               </div>
             <?php endforeach ?>
           </td>
@@ -53,5 +57,5 @@
 </div>
 
 <div class="text-center retour">
-  <a href="<?= $baseURL ?>/">Revenir à l'accueil</a>
+  <a href="<?=$baseURL?>/liste">Revenir à la liste</a>
 </div>

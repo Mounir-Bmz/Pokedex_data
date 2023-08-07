@@ -40,12 +40,22 @@ $router->map(
 
 $router->map(
     'GET', 
-    '/liste',
+    '/(liste|liste/)',
     [
         'action' => 'liste',
         'controller' => 'MainController'
     ],
     'liste'
+);
+
+$router->map(
+    'GET', 
+    '/liste/[:type]',
+    [
+        'action' => 'liste',
+        'controller' => 'MainController'
+    ],
+    'liste-type'
 );
 
 $match = $router->match();
