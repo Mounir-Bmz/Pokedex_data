@@ -25,6 +25,7 @@
         <?php
         $name =  $currentCharacter->getName();
         $number = $currentCharacter->getNumber();
+        $types = $currentCharacter->findTypeByNumber($number);
         ?>
         <tr>
           <td>
@@ -37,6 +38,13 @@
           </td>
           <td>
             <?= $name ?>
+          </td>
+          <td>
+            <?php foreach ($types as $type) : ?>
+              <div class="d-flex justify-content-center align-items-center pokemon-info-item">
+                <h5 class="type-block type-title" style="background-color:#<?= $type->getTypeColor() ?>"><?= $type->getTypeName() ?></h5>
+              </div>
+            <?php endforeach ?>
           </td>
         </tr>
       <?php endforeach ?>
