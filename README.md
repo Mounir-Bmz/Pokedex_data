@@ -1,6 +1,6 @@
 # Pokédex
 
-Bienvenue dans le projet Pokédex ! L'objectif de ce projet est de créer un Pokédex en utilisant PHP, MySQL, HTML/CSS et le framework AltoRouter.
+Bienvenue dans le projet Pokédex (database) ! L'objectif de ce projet est de créer un Pokédex en utilisant PHP, MySQL, HTML/CSS et le framework AltoRouter.
 
 ## Description
 
@@ -42,6 +42,3 @@ Ce Pokédex est une application web permettant de visualiser la liste des Pokém
 
 Ce projet a été réalisé dans le cadre d'un exercice pour pratiquer les interactions avec les bases de données MySQL en utilisant PHP. Il suit le modèle MVC (Modèle-Vue-Contrôleur) pour une meilleure organisation du code.
 
-## Auteur
-
-Mounir Boumaza
