@@ -1,46 +1,47 @@
 # Pokédex
 
-Apprentis professeurs Chen, j'ai une requête pour vous ! Je souhaiterais un pokédex tout beau, tout neuf !
+Bienvenue dans le projet Pokédex ! L'objectif de ce projet est de créer un Pokédex en utilisant PHP, MySQL, HTML/CSS et le framework AltoRouter.
 
-Un pokédex est une sorte de dictionnaire de tous les pokémon (petites créatures fictives et adorables). Ces derniers peuvent se battre
-et disposent de caractéristiques de combat appelées statistiques. Chaque pokémon possède aussi un ou deux types (plante, roche, feu...).
+## Description
 
-Vous aurez besoin pour cette mission des outils suivants : 
-- PHP
-- MySQL
-- HTML et CSS
-- Composer
-- AltoRouter
+Ce Pokédex est une application web permettant de visualiser la liste des Pokémon de la première génération avec leurs détails. Chaque Pokémon possède des caractéristiques de combat, appelées statistiques, ainsi qu'un ou deux types (plante, roche, feu, etc.). Les données des Pokémon sont stockées dans une base de données MySQL et sont récupérées à l'aide de requêtes SQL.
 
-Une base de données à importer vous est fournie à la racine du projet : `pokedex.sql`. Elle contient la liste des pokémon et 
-leurs types. Vous n'avez pas à la modifier.
+## Fonctionnalités
 
-# Instructions 
+- Liste complète des Pokémon gen1.
+- Affichage des détails d'un Pokémon, comprenant ses statistiques et son/ses type(s).
+- Filtrage des Pokémon par type.
+- Interface utilisateur responsive pour une expérience fluide sur différents appareils.
 
-Voici la liste des pages à faire, vous avez un aperçu de chaque dans le dossier résultat : 
+## Screenshots
 
-- Une [page d'accueil](resultat/home.png) qui liste tous les pokémon de la base
-- Une [page détail d'un pokémon](resultat/detail.png) qui affiche son type et ses stats
+![Page d'accueil](public/img/poke_responsive.jpg)
+![Détail d'un Pokémon](public/img/poke_details.jpeg)
+![Liste des Pokémon](public/img/poke_liste.jpeg)
+![Liste des Pokémon](public/img/poke_liste_glace.jpeg)
+![Liste des types Pokémon](public/img/poke_types.jpeg)
 
-La police utilisée est Bree Serif sur Google Fonts. Pour les couleurs, utilisez une pipette :wink:. Pour celles des types, elle est fournie dans la base.
+## Instructions
 
-## Par où commencer ?
+### Installation
 
-Voilà quelques pistes pour vous aider : 
+1. Clonez ce dépôt.
+2. Configurez votre serveur web pour utiliser le fichier `.htaccess` pour la réécriture d'URL (Apache) ou un équivalent pour d'autres serveurs.
+3. Importez la base de données à partir du fichier `pokedex.sql` fourni.
+4. Mettez à jour les informations de connexion à la base de données dans le fichier `config.ini` (renommez config.ini.dist en config.ini).
+5. Installez les dépendances en exécutant la commande `composer install`.
 
-- Commencez par installer AltoRouter avec composer
-- Il faut inclure l'autoloader pour pouvoir utiliser la classe AltoRouter
-- Vous aurez besoin d'un controller principal (MainController.php)
-- Il y a deux routes à créer
-- Pour récupérer les types d'un pokémon, il faut utiliser une jointure sur la table `pokemon_type`
-- Les images sont déjà prêtes et portent le nom du numéro du pokémon dans le dossier `public/img`
-- Pour les barres de statistiques, la valeur maximale est de 255. On peut donc utiliser un produit en croix pour le remplissage :wink:
+### Utilisation
 
-# Bonus
+- Accédez à la page d'accueil pour voir la liste complète des Pokémon.
+- Cliquez sur un Pokémon pour afficher ses détails.
+- Cliquez sur le type d'un Pokémon pour afficher la liste des Pokémon du même type.
+- Utilisez les liens de navigation pour afficher tous les types ou les Pokémon sous forme de liste détaillée.
 
-Je veux ajouter une fonctionnalité : récupérer des pokémons selon leur type.
+## Remarques
 
-Il nous faudra donc : 
-- Une [page qui liste les types](resultat/types.png) de la base quand on clique sur l'un on arrive sur la page suivante
-- Une [page qui liste les pokémon filtrés par le type](resultat/electrik.png) cliqué sur la page précédente (electrik.png)
+Ce projet a été réalisé dans le cadre d'un exercice pour pratiquer les interactions avec les bases de données MySQL en utilisant PHP. Il suit le modèle MVC (Modèle-Vue-Contrôleur) pour une meilleure organisation du code.
 
+## Auteur
+
+Mounir Boumaza

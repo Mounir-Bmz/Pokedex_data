@@ -1,4 +1,6 @@
 <?php
+// language: php
+// encoding: utf-8
 
 require_once('../vendor/autoload.php');
 require_once('../app/Controllers/MainController.php');
