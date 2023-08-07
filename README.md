@@ -31,6 +31,10 @@ Ce Pokédex est une application web permettant de visualiser la liste des Pokém
 4. Mettez à jour les informations de connexion à la base de données dans le fichier `config.ini` (renommez config.ini.dist en config.ini).
 5. Installez les dépendances en exécutant la commande `composer install`.
 
+```console
+composer install
+```
+
 ### Utilisation
 
 - Accédez à la page d'accueil pour voir la liste complète des Pokémon.
@@ -41,4 +45,3 @@ Ce Pokédex est une application web permettant de visualiser la liste des Pokém
 ## Remarques
 
 Ce projet a été réalisé dans le cadre d'un exercice pour pratiquer les interactions avec les bases de données MySQL en utilisant PHP. Il suit le modèle MVC (Modèle-Vue-Contrôleur) pour une meilleure organisation du code.
-
