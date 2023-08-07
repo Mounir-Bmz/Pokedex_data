@@ -449,7 +449,7 @@ INSERT INTO `type` (`id`, `name`, `color`) VALUES
 (2, 'Combat', 'bb5544'),
 (3, 'Dragon', '7766ee'),
 (4, 'Eau', '3399ff'),
-(5, 'Électrik', 'ffbb33'),
+(5, 'Electrik', 'ffbb33'),
 (6, 'Feu', 'ff4422'),
 (7, 'Glace', '77ddff'),
 (8, 'Insecte', 'aabb22'),
