@@ -1,5 +1,24 @@
+<?php
+// De la lecture direct de URL pour l'entrainement
+
+// Récupérer l'URL actuelle
+$currentURL = $_SERVER['REQUEST_URI'];
+
+// Diviser l'URL en parties en utilisant '/'
+$parts = explode('/', $currentURL);
+
+// Trouver l'index du segment "liste" dans le tableau
+$listIndex = array_search('liste', $parts);
+
+// Récupérer tous les éléments après "liste" dans l'URL
+$elementsAfterList = array_slice($parts, $listIndex + 1);
+
+// Joindre les éléments en une chaîne
+$type = implode('/', $elementsAfterList);
+?>
+
 <div class="text-center">
-  <h2> Liste des Pokémon </h2>
+  <h2> Liste des Pokémon <?= $type ?></h2>
 </div>
 
 <div class="text-center">
