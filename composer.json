@@ -1,0 +1,17 @@
+{
+    "name": "mounir-bmz/pokedex_data",
+    "require": {
+        "altorouter/altorouter": "1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pokedex_data\\": "./app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mounir-Bmz",
+            "email": "mounir.boumaza.dev@gmail.com"
+        }
+    ]
+}
