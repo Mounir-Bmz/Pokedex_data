@@ -29,7 +29,7 @@ $typeColor02 = $viewData['tPokemon'][1] ?? null;
     ?>
 
 <?php else : ?>
-    <h2>OOF</h2>
+    <h2 class="text-center">Oups!</h2>
 <?php endif; ?>
 
 <?php if (isset($dPokemon) && is_object($dPokemon)) : ?>
@@ -109,7 +109,7 @@ $typeColor02 = $viewData['tPokemon'][1] ?? null;
             </div>
         </div>
         <div class="text-center retour">
-            <a href="<?= $baseURL ?>/">Revenir à la liste</a>
+            <a href="<?= $baseURL ?>/">Revenir à l'accueil</a>
         </div>
     </div>
 <?php else : ?>

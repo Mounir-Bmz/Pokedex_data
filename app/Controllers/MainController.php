@@ -47,7 +47,12 @@ class MainController
     }
 
     public function liste() {
-        $this->show('liste');
+        $chara = new Pokemon();
+        $charaList = $chara->findAll();
+
+        $this->show('liste',[
+            'charaList' => $charaList
+        ]);
     }
 
     // public function err404() {
